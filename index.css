@@ -7,3 +7,36 @@
 img {
     max-width: 150px;
 }
+
+/* Game Stage Section */
+
+h1 {
+    text-align: center;
+    padding: 30px;
+    font-size: 3rem;
+}
+
+.game-stage.container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    row-gap: 50px;
+    font-size: 1.5rem;
+}
+
+.game-stage.img {
+    display: flex;
+    column-gap: 120px;
+    flex-flow: row wrap;
+}
+
+.choices.img {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 150px;
+    padding: 70px;
+}
+
+.choices.img img {
+    width: 200px;
+}
