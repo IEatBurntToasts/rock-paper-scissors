@@ -6,6 +6,7 @@
 
 img {
     max-width: 150px;
+    max-height: 150px;
 }
 
 /* Game Stage Section */
@@ -28,7 +29,18 @@ h1 {
     display: flex;
     column-gap: 120px;
     flex-flow: row wrap;
+    align-items: center;
 }
+
+.box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Choice Buttons Section */
 
 .choices.img {
     display: flex;
@@ -39,4 +51,10 @@ h1 {
 
 .choices.img img {
     width: 200px;
+    padding: 20px;
+}
+
+.choices button {
+    border-radius: 15px;
+    border: none;
 }
