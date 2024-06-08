@@ -1,3 +1,7 @@
+function processEvents(playerChoiceElement) {
+    ;
+}
+
 function computerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
 
