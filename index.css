@@ -130,6 +130,11 @@ h2 {
     height: auto;
     background-color: #d3d3d3;
     row-gap: 20px;
+    transition: transform 0.4s;
+}
+
+.restart-box.active {
+    transform: scale(1.1);
 }
 
 .restart-box h2 {

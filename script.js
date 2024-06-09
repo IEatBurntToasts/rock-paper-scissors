@@ -50,10 +50,12 @@ function announceWinner(winner) {
 
 function addOverlayEventListener() {
     const overlay = document.querySelector('.overlay');
+    const restartBox = document.querySelector('.restart-box');
 
     overlay.addEventListener('click', () => {
         if (!mouseOverRestartBox) {
             overlay.style.visibility = 'hidden';
+            restartBox.classList.remove('active');
         }
     });
 }
@@ -75,8 +77,10 @@ function changeEndgameButtonEventListeners(array) {
 
 function restartWindowPopup() {
     const overlay = document.querySelector('.overlay');
+    const restartBox = document.querySelector('.restart-box');
 
     overlay.style.visibility = 'visible';
+    restartBox.classList.add('active');
 }
 
 function trackEndgameCursor() {
