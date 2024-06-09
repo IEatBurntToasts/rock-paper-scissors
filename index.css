@@ -262,3 +262,16 @@ footer a {
         row-gap: 10px;
     }
 }
+
+@media only screen and (max-height: 660px) {
+    footer {
+        padding: 5px;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-height: 625px) {
+    footer {
+        display: none;
+    }
+}
