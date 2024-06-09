@@ -11,6 +11,12 @@
     src: url('./misc/determination.ttf');
 }
 
+body {
+    overflow: hidden;
+    height: 100vh;
+    background-color: #ccc5c5;
+}
+
 img {
     max-width: 150px;
     max-height: 150px;
@@ -22,6 +28,14 @@ h1 {
     text-align: center;
     padding: 30px;
     font-size: 3rem;
+    background-color: #d2d1e0;
+}
+
+h2 {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: #bdbdc5;
 }
 
 .game-stage.container {
@@ -58,7 +72,7 @@ h1 {
 }
 
 .choices button:hover {
-    background-color: #e6dbdb;
+    background-color: #b4b1b1;
 }
 
 .choices button:active {
@@ -114,13 +128,14 @@ h1 {
     padding: 50px;
     border-radius: 20px;
     height: auto;
-    background-color: lightgray;
+    background-color: #d3d3d3;
     row-gap: 20px;
 }
 
 .restart-box h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-wrap: nowrap;
+    background-color: transparent;
 }
 
 button.restart {
@@ -146,7 +161,7 @@ footer {
     bottom: 0;
     padding: 20px;
     font-size: 1.2rem;
-    background-color: #808080;
+    background-color: #9c9a9a;
 }
 
 /* Media Queries Section */
@@ -188,6 +203,7 @@ footer {
 @media only screen and (max-width: 600px) {
     .choices.img {
         column-gap: 20px;
+        padding: 20px 10px;
     }
 
     .choices.img button {
@@ -200,7 +216,7 @@ footer {
     }
 
     h2 {
-        font-size: 1.7rem;
+        font-size: 1.2rem;
     }
 
     p {
