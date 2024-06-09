@@ -244,3 +244,21 @@ footer a {
         font-size: 1rem;
     }
 }
+
+@media only screen and (max-width: 370px) {
+    .choices.img {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-height: 810px) {
+    .choices.img {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-height: 740px) {
+    .game-stage.container {
+        row-gap: 10px;
+    }
+}
