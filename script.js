@@ -4,7 +4,7 @@ buttonChoices.forEach((button) => {
     button.addEventListener('click', (event) => {
         processEvents(event.target);
     });
-})
+});
 
 function processEvents(playerChoiceElement) {
     const playerChoice = playerChoiceElement.classList.value;
@@ -13,6 +13,7 @@ function processEvents(playerChoiceElement) {
 
     updateScoreboard(winner);
     updateBattleIcon(winner);
+    updateUserIcons(playerChoice, computerChoice);
     checkWinner();
 }
 
@@ -28,30 +29,39 @@ function checkWinner() {
 }
 
 function endGame(winner) {
-    ;
+    removeEventListeners(buttonChoices);
+}
+
+function removeEventListeners(array) {
+    array.forEach((button) => {
+        const cloneButton = button.cloneNode(true);
+        button.parentElement.replaceChild(cloneButton, button);
+    });
 }
 
 function updateUserIcons(playerChoice, computerChoice) {
-    const playerIcon = document.querySelector('player-icon');
-    const computerIcon = document.querySelector('computer-icon');
+    const playerIcon = document.querySelector('.player-icon');
+    const computerIcon = document.querySelector('.computer-icon');
 
-    switch (playerIcon) {
+    switch (playerChoice) {
         case 'rock':
             playerIcon.setAttribute('src', './img/rock.png');
             break;
         case 'paper':
             playerIcon.setAttribute('src', './img/paper.png');
+            break;
         case 'scissors':
             playerIcon.setAttribute('src', './img/scissors.png');
     }
 
-    switch (computerIcon) {
+    switch (computerChoice) {
         case 'rock':
             case 'rock':
                 computerIcon.setAttribute('src', './img/rock.png');
                 break;
             case 'paper':
                 computerIcon.setAttribute('src', './img/paper.png');
+                break;
             case 'scissors':
                 computerIcon.setAttribute('src', './img/scissors.png');
     }
