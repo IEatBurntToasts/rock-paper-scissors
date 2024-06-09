@@ -13,6 +13,22 @@ function processEvents(playerChoiceElement) {
 
     updateScoreboard(winner);
     updateBattleIcon(winner);
+    checkWinner();
+}
+
+function checkWinner() {
+    const playerScore = +document.querySelector('.player-score').getAttribute('data-value');
+    const computerScore = +document.querySelector('.computer-score').getAttribute('data-value');
+
+    if (playerScore === 5) {
+        endGame('player');
+    } else if (computerScore === 5) {
+        endGame('computer');
+    }
+}
+
+function endGame(winner) {
+    ;
 }
 
 function updateBattleIcon(winner) {
