@@ -29,7 +29,7 @@ h1 {
     display: flex;
     column-gap: 120px;
     padding: 0 20px;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
 }
 
@@ -45,7 +45,7 @@ h1 {
 
 .choices.img {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     column-gap: 150px;
     padding: 70px 20px;
 }
@@ -60,7 +60,7 @@ h1 {
 
 .choices button {
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 150px;
     height: 150px;
     border-radius: 15px;
@@ -130,3 +130,61 @@ button.restart:active {
     background-color: darkgray;
 }
 
+/* Media Queries Section */
+
+@media only screen and (max-width: 890px) {
+    .choices.img {
+        column-gap: 80px;
+    }
+
+    .game-stage.img {
+        column-gap: 100px;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    .game-stage.img {
+        column-gap: 25px;
+    }
+
+    .choices.img {
+        column-gap: 50px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .computer.box,
+    .player.box,
+    .battle-icon.box {
+        min-width: 50px;
+        width: 100%;
+        flex: auto;
+        text-wrap: nowrap;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .choices.img {
+        column-gap: 20px;
+    }
+
+    .choices.img button {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+}
