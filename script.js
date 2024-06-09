@@ -34,10 +34,18 @@ function checkWinner() {
 }
 
 function processEndGame(winner) {
+    announceWinner(winner);
     changeEndgameButtonEventListeners(buttonChoices);
     trackEndgameCursor();
     addOverlayEventListener();
     restartWindowPopup();
+}
+
+function announceWinner(winner) {
+    const restartWindowWinnerText = document.querySelector('h2.winner-text');
+    const winnerText = winner.charAt(0).toUpperCase() + winner.slice(1) + " Wins!";
+
+    restartWindowWinnerText.textContent = winnerText;
 }
 
 function addOverlayEventListener() {

@@ -80,7 +80,7 @@ h1 {
     background-image: url('./img/scissors.png');
 }
 
-/* Restart Popup Section */
+/* Restart Popup Window Section */
 
 .overlay {
     position: fixed; 
@@ -112,6 +112,7 @@ h1 {
 
 .restart-box h2 {
     font-size: 2rem;
+    text-wrap: nowrap;
 }
 
 button.restart {
