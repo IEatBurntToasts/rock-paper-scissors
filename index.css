@@ -270,7 +270,7 @@ footer a {
     }
 }
 
-@media only screen and (max-height: 625px) {
+@media only screen and (max-height: 625px) and (min-width: 600px) {
     footer {
         display: none;
     }
