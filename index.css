@@ -49,6 +49,14 @@ h1 {
     padding: 70px;
 }
 
+.choices button:hover {
+    background-color: #e6dbdb;
+}
+
+.choices button:active {
+    background-color: #d3d3d3;
+}
+
 .choices button {
     background-repeat: no-repeat;
     background-size: cover;
