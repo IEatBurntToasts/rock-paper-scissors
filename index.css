@@ -130,11 +130,23 @@ button.restart {
 }
 
 button.restart:hover {
-    background-color: gray;
+    background-color: #808080;
 }
 
 button.restart:active {
-    background-color: darkgray;
+    background-color: #a9a9a9;
+}
+
+/* Footer Section */
+
+footer {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: #808080;
 }
 
 /* Media Queries Section */
