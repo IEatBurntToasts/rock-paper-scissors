@@ -7,7 +7,7 @@
     <title>Rock Paper Scissors</title>
     <link rel="icon" type="image/x-icon" href="./img/scissors-icon.jpg">
     <link rel="stylesheet" href="./index.css">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
@@ -15,19 +15,19 @@
         <h2>Best of 5 wins</h2>
         <div class="game-stage img">
             <div class="player box">
-                <p>Player: 0</p>
+                <p class="player-score">Player: 0</p>
                 <img src="./img/user.png" alt="Person with question mark for face">
             </div>
             <img src="./img/cross-swords.png" alt="Cross swords">
             <div class="computer box">
-                <p>Computer: 0</p>
+                <p class="computer-score">Computer: 0</p>
                 <img src="./img/computer.png" alt="Computer chip">
             </div>
         </div>
         <div class="choices img">
-            <button class="rock"><img src="./img/rock.png" alt="Rock symbol"></button>
-            <button class="paper"><img src="./img/paper.png" alt="Paper symbol"></button>
-            <button class="scissors"><img src="./img/scissors.png" alt="Scissors symbol"></button>
+            <button class="rock"></button>
+            <button class="paper"></button>
+            <button class="scissors"></button>
         </div>
     </div>
 </body>
