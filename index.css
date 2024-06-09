@@ -155,13 +155,24 @@ button.restart:active {
 /* Footer Section */
 
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    text-align: center;
     width: 100%;
     bottom: 0;
     padding: 20px;
     font-size: 1.2rem;
     background-color: #9c9a9a;
+}
+
+footer a {
+    display: flex;
+    padding: 5px;
+}
+
+.footer-icon img {
+    width: 25px;
 }
 
 /* Media Queries Section */
