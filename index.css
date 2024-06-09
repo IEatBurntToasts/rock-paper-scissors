@@ -133,7 +133,7 @@ h2 {
 }
 
 .restart-box h2 {
-    font-size: 1.5rem;
+    font-size: 21px;
     text-wrap: nowrap;
     background-color: transparent;
 }
@@ -171,8 +171,13 @@ footer a {
     padding: 5px;
 }
 
-.footer-icon img {
+.footer-github-link img {
     width: 25px;
+    transition: transform 0.3s;
+}
+
+.footer-github-link img:hover {
+    transform: rotate(360deg) scale(1.2);
 }
 
 /* Media Queries Section */
