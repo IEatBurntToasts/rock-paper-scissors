@@ -8,25 +8,32 @@ buttonChoices.forEach((button) => {
 
 function processEvents(playerChoiceElement) {
     const playerChoice = playerChoiceElement.classList.value;
-    const computerChoice = computerChoice();
+    const computerChoice = computerChoose();
     const winner = determineWinner(playerChoice, computerChoice);
 
     updateScoreboard(winner);
 }
 
 function updateScoreboard(winner) {
-    const playerScore = document.querySelector('player-score');
-    const computerScore = document.querySelector('computer-score');
+    const playerScore = document.querySelector('.player-score');
+    const computerScore = document.querySelector('.computer-score');
 
     switch (winner) {
         case 'player':
-            playerScore.textContent = +playerScore.textContent++;
+            const updatedPlayerScore = +playerScore.getAttribute('data-value') + 1;
+
+            playerScore.textContent = `Player: ${updatedPlayerScore}`;
+            playerScore.setAttribute('data-value', updatedPlayerScore);
+            break;
         case 'computer':
-            computerScore.textContent = +computerScore.textContent++;
+            const updatedComputerScore = +computerScore.getAttribute('data-value') + 1;
+
+            computerScore.textContent = `Computer: ${updatedComputerScore}`;
+            computerScore.setAttribute('data-value', updatedComputerScore);
     }
 }
 
-function computerChoice() {
+function computerChoose() {
     const randomChoice = Math.floor(Math.random() * 3);
 
     switch (randomChoice) {
