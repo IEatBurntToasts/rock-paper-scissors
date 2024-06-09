@@ -31,6 +31,32 @@ function endGame(winner) {
     ;
 }
 
+function updateUserIcons(playerChoice, computerChoice) {
+    const playerIcon = document.querySelector('player-icon');
+    const computerIcon = document.querySelector('computer-icon');
+
+    switch (playerIcon) {
+        case 'rock':
+            playerIcon.setAttribute('src', './img/rock.png');
+            break;
+        case 'paper':
+            playerIcon.setAttribute('src', './img/paper.png');
+        case 'scissors':
+            playerIcon.setAttribute('src', './img/scissors.png');
+    }
+
+    switch (computerIcon) {
+        case 'rock':
+            case 'rock':
+                computerIcon.setAttribute('src', './img/rock.png');
+                break;
+            case 'paper':
+                computerIcon.setAttribute('src', './img/paper.png');
+            case 'scissors':
+                computerIcon.setAttribute('src', './img/scissors.png');
+    }
+}
+
 function updateBattleIcon(winner) {
     const battleIcon = document.querySelector('.battle-icon');
     const imageRandomChoice = Math.floor(Math.random() * 3);
