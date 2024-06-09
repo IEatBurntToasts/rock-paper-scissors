@@ -115,7 +115,7 @@ function updateUserIcons(playerChoice, computerChoice) {
 }
 
 function updateBattleIcon(winner) {
-    const battleIcon = document.querySelector('.battle-icon');
+    const battleIcon = document.querySelector('img.battle-icon');
     const imageRandomChoice = Math.floor(Math.random() * 3);
 
     switch (winner) {
