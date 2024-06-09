@@ -79,3 +79,44 @@ h1 {
 .choices button.scissors {
     background-image: url('./img/scissors.png');
 }
+
+/* Restart Popup Section */
+
+.overlay {
+    position: fixed; 
+    visibility: hidden;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; 
+    background-color: rgba(0,0,0,0.5);
+}
+
+.restart-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    padding: 50px;
+    border-radius: 20px;
+    height: auto;
+    background-color: lightgray;
+    row-gap: 20px;
+}
+
+.restart-box h2 {
+    font-size: 2rem;
+}
+
+button.restart {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+}
+

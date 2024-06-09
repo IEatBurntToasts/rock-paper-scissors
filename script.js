@@ -1,4 +1,4 @@
-const buttonChoices = Array.from(document.querySelectorAll('button'));
+const buttonChoices = Array.from(document.querySelectorAll('button:not(.restart)'));
 
 buttonChoices.forEach((button) => {
     button.addEventListener('click', (event) => {
@@ -30,6 +30,11 @@ function checkWinner() {
 
 function endGame(winner) {
     removeEventListeners(buttonChoices);
+    restartWindowPopup();
+}
+
+function restartWindowPopup() {
+    ;
 }
 
 function removeEventListeners(array) {
