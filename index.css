@@ -120,3 +120,11 @@ button.restart {
     font-size: 1.3rem;
 }
 
+button.restart:hover {
+    background-color: gray;
+}
+
+button.restart:active {
+    background-color: darkgray;
+}
+

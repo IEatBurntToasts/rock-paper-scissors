@@ -1,10 +1,15 @@
 const buttonChoices = Array.from(document.querySelectorAll('button:not(.restart)'));
+let mouseOverRestartBox = false;
 
-buttonChoices.forEach((button) => {
-    button.addEventListener('click', (event) => {
-        processEvents(event.target);
+window.onload = gameSetUp();
+
+function gameSetUp() {
+    buttonChoices.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            processEvents(event.target);
+        });
     });
-});
+}
 
 function processEvents(playerChoiceElement) {
     const playerChoice = playerChoiceElement.classList.value;
@@ -22,26 +27,55 @@ function checkWinner() {
     const computerScore = +document.querySelector('.computer-score').getAttribute('data-value');
 
     if (playerScore === 5) {
-        endGame('player');
+        processEndGame('player');
     } else if (computerScore === 5) {
-        endGame('computer');
+        processEndGame('computer');
     }
 }
 
-function endGame(winner) {
-    removeEventListeners(buttonChoices);
+function processEndGame(winner) {
+    changeEndgameButtonEventListeners(buttonChoices);
+    trackEndgameCursor();
+    addOverlayEventListener();
     restartWindowPopup();
 }
 
-function restartWindowPopup() {
-    ;
+function addOverlayEventListener() {
+    const overlay = document.querySelector('.overlay');
+
+    overlay.addEventListener('click', () => {
+        if (!mouseOverRestartBox) {
+            overlay.style.visibility = 'hidden';
+        }
+    });
 }
 
-function removeEventListeners(array) {
+function changeEndgameButtonEventListeners(array) {
+    const restartButton = document.querySelector('button.restart');
+
+    restartButton.addEventListener('click', () => {
+        window.location.reload();
+    });
+
     array.forEach((button) => {
         const cloneButton = button.cloneNode(true);
+
+        cloneButton.addEventListener('click', restartWindowPopup);
         button.parentElement.replaceChild(cloneButton, button);
     });
+}
+
+function restartWindowPopup() {
+    const overlay = document.querySelector('.overlay');
+
+    overlay.style.visibility = 'visible';
+}
+
+function trackEndgameCursor() {
+    const restartBox = document.querySelector('.restart-box');
+
+    restartBox.addEventListener('mouseenter', () => mouseOverRestartBox = true);
+    restartBox.addEventListener('mouseleave', () => mouseOverRestartBox = false);
 }
 
 function updateUserIcons(playerChoice, computerChoice) {
