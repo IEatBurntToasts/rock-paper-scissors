@@ -12,6 +12,35 @@ function processEvents(playerChoiceElement) {
     const winner = determineWinner(playerChoice, computerChoice);
 
     updateScoreboard(winner);
+    updateBattleIcon(winner);
+}
+
+function updateBattleIcon(winner) {
+    const battleIcon = document.querySelector('.battle-icon');
+    const imageRandomChoice = Math.floor(Math.random() * 3);
+
+    switch (winner) {
+        case 'tie':
+            battleIcon.setAttribute('src', './img/battle-icons/tie.png');
+            break;
+        case 'player':
+            if (imageRandomChoice === 0) {
+                battleIcon.setAttribute('src', './img/battle-icons/player-win/shoot-player.png')
+            } else if (imageRandomChoice === 1) {
+                battleIcon.setAttribute('src', './img/battle-icons/player-win/slash-player.png')
+            } else {
+                battleIcon.setAttribute('src', './img/battle-icons/player-win/stab-player.png')
+            }
+            break;
+        case 'computer':
+            if (imageRandomChoice === 0) {
+                battleIcon.setAttribute('src', './img/battle-icons/computer-win/shoot-comp.png')
+            } else if (imageRandomChoice === 1) {
+                battleIcon.setAttribute('src', './img/battle-icons/computer-win/slash-comp.png')
+            } else {
+                battleIcon.setAttribute('src', './img/battle-icons/computer-win/stab-comp.png')
+            }
+    }
 }
 
 function updateScoreboard(winner) {
